@@ -1,0 +1,131 @@
+:root {
+  --page-width: 76rem;
+  --card-min: 17rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --ink: #263238;
+  --muted: #647276;
+  --accent: #286b57;
+  --paper: #f4f7f2;
+  --card: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0.8rem var(--gutter);
+  background: var(--accent);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+main {
+  width: min(100%, var(--page-width));
+  margin-inline: auto;
+}
+
+section {
+  padding: clamp(2.5rem, 7vw, 5rem) var(--gutter);
+  text-align: center;
+}
+
+.home h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.home p {
+  max-width: 42rem;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--card-min)), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  padding: 0 var(--gutter) clamp(2.5rem, 7vw, 5rem);
+}
+
+.portfolio-item {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: var(--card);
+  box-shadow: 0 0.5rem 1.5rem rgb(38 50 56 / 10%);
+  text-align: left;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.8rem 1.8rem rgb(38 50 56 / 16%);
+}
+
+.portfolio-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.portfolio-item h3,
+.portfolio-item p {
+  margin-inline: 1rem;
+}
+
+.portfolio-item h3 {
+  margin-block: 1rem 0.4rem;
+}
+
+.portfolio-item p {
+  margin-block: 0 1rem;
+  color: var(--muted);
+}
+
+#footer {
+  padding: 2rem var(--gutter);
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+}
