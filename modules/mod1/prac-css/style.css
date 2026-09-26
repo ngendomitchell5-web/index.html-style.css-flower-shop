@@ -1,24 +1,27 @@
-/* Make widths easier to manage */
-* {
-  box-sizing: border-box;
+/* Basic page styles */
+body {
+  margin: 0;
+  background-color: #fffaf7;
+  color: #333;
+  font-family: Georgia, serif;
 }
 
-/* Style the fixed navigation bar */
+/* Fixed navigation bar */
 .navbar {
-  background-color: #333;
-  font-size: 1.2em;
-  padding: 1em;
-  text-align: center;
   position: fixed;
   top: 0;
-  width: 100%;
   z-index: 1000;
+  width: 100%;
+  padding: 1em;
+  background-color: #333;
+  font-size: 1.2em;
+  text-align: center;
 }
 
 .navbar ul {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .navbar li {
@@ -31,27 +34,33 @@
   text-decoration: none;
 }
 
-/* Leave room below the fixed navigation bar */
+/* Main page content */
 main {
   padding-top: 5em;
 }
 
-section {
+main section {
   padding: 2em 1em;
   text-align: center;
 }
 
+/* Welcome section */
+.home {
+  background-color: #f6e8e1;
+}
+
 .home h1 {
-  font-size: 2.5em;
   margin-bottom: 0.5em;
+  color: #713f42;
+  font-size: 2.5em;
 }
 
 .home p {
-  font-size: 1.2em;
   color: #666;
+  font-size: 1.2em;
 }
 
-/* Arrange flower cards in rows */
+/* Flower cards */
 .portfolio-container {
   display: flex;
   flex-wrap: wrap;
@@ -60,12 +69,13 @@ section {
 }
 
 .portfolio-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  box-sizing: border-box;
+  width: 30%;
   margin: 1em;
   padding: 1em;
+  border: 1px solid #ddd;
+  background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 30%;
   transition: transform 0.3s;
 }
 
@@ -74,8 +84,8 @@ section {
 }
 
 .portfolio-item h3 {
-  font-weight: bold;
   margin-bottom: 0.5em;
+  color: #713f42;
 }
 
 .portfolio-item p {
@@ -85,29 +95,23 @@ section {
 
 .portfolio-item img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the footer using its ID */
+/* Contact footer */
 #footer {
-  background-color: #222;
-  color: #fff;
-  padding: 2em;
-  text-align: center;
   position: relative;
   bottom: 0;
   width: 100%;
+  padding: 2em;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
 }
 
-/* Make the cards fit on smaller screens */
+/* Stack the flower cards on small screens */
 @media (max-width: 700px) {
   .portfolio-item {
     width: 100%;
-  }
-
-  .navbar li {
-    margin: 0 0.4em;
   }
 }
